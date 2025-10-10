@@ -1,9 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useLanguage } from "./context/LanguageContext";
 
 export function Skills() {
+  const { language } = useLanguage();
+
   return (
     <div className="flex flex-col gap-10 items-center">
-      <h2 className="text-3xl text-center">My Skills</h2>
+      <h2 className="text-3xl text-center">
+        {language === "fa" ? "مهارت‌های من" : "My Skills"}
+      </h2>
       <div className="flex items-start gap-14 md:gap-32">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-2">
