@@ -35,53 +35,12 @@ export function Header() {
 
   return (
     <div
-      className={`flex items-center justify-center md:justify-between px-16 ${
+      className={`flex items-center justify-center md:justify-between px-8 md:px-16 md:gap-10 ${
         language === "fa" ? "flex-row-reverse" : ""
       }`}
       dir={language === "fa" ? "rtl" : "ltr"}
     >
-      <div
-        className={`md:flex items-center gap-3 relative group hidden ${
-          language === "fa" ? "flex-row-reverse" : ""
-        }`}
-      >
-        <Image src="/icons/logo.png" width={24} height={24} alt="email icon" />
-        <span>behbod7899@gmail.com</span>
-
-        <div
-          className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 hidden group-hover:flex 
-      bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg 
-      whitespace-nowrap transition-all duration-200
-      ${language === "fa" ? "flex-row-reverse" : "flex-row"}`}
-          dir={language === "fa" ? "rtl" : "ltr"}
-        >
-          <div className="flex items-center gap-2 w-full justify-center">
-            {language === "en" ? (
-              <>
-                <Image
-                  src="/emojies/high-five.png"
-                  width={21}
-                  height={21}
-                  alt="high five icon"
-                />
-                <span>{t.tooltip}</span>
-              </>
-            ) : (
-              <>
-                <span>{t.tooltip}</span>
-                <Image
-                  src="/emojies/high-five.png"
-                  width={21}
-                  height={21}
-                  alt="high five icon"
-                />
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-between md:justify-normal gap-20 md:gap-10">
+      <div className="flex items-center w-full justify-between">
         <div className="flex items-center gap-5 md:gap-10">
           <Link
             href="/"
@@ -111,18 +70,11 @@ export function Header() {
 
         <button
           onClick={toggleLanguage}
-          className="md:hidden border border-neutral-300 rounded-full px-3 py-1 text-sm hover:bg-neutral-100 transition"
+          className="border border-neutral-300 rounded-full px-3 py-1 text-sm hover:bg-neutral-100 transition"
         >
           {language === "en" ? "فارسی" : "English"}
         </button>
       </div>
-
-      <button
-        onClick={toggleLanguage}
-        className="hidden md:flex border border-neutral-300 rounded-full px-3 py-1 text-sm hover:bg-neutral-100 transition"
-      >
-        {language === "en" ? "فارسی" : "English"}
-      </button>
     </div>
   );
 }

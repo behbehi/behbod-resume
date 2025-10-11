@@ -118,7 +118,11 @@ export default function ProjectsPage() {
                 https://dev.tarafdari.com
               </Link>
             </div>
-            <ul className="list-disc pl-8 marker:text-light text-light flex flex-col gap-2">
+            <ul
+              className={`list-disc marker:text-light text-light flex flex-col gap-2 ${
+                language === "fa" ? "pr-8" : "pl-8"
+              }`}
+            >
               {t.tarafdariPoints.map((point, i) => (
                 <li key={i} className="pl-2 text-justify">
                   {point}
@@ -141,7 +145,11 @@ export default function ProjectsPage() {
               <h2 className="text-3xl">{t.uiuxTitle}</h2>
               <h3 className="text-xl text-light">{t.uiuxDesc}</h3>
             </div>
-            <ul className="list-disc pl-8 marker:text-light text-light flex flex-col gap-2">
+            <ul
+              className={`list-disc marker:text-light text-light flex flex-col gap-2 ${
+                language === "fa" ? "pr-8" : "pl-8"
+              }`}
+            >
               {t.uiuxPoints.map((point, i) => (
                 <li key={i} className="pl-2 text-justify">
                   {point}

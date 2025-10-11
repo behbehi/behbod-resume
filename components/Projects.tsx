@@ -36,7 +36,9 @@ export function Projects() {
         </div>
         <Link
           href="/projects"
-          className="underline hover:no-underline text-sm pl-8 md:pl-0"
+          className={`underline hover:no-underline text-sm ${
+            language === "fa" ? "pr-8 md:pr-0" : "pl-8 md:pl-0"
+          }`}
         >
           {t.link}
         </Link>
