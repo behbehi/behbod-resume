@@ -1,6 +1,7 @@
 import { Contact } from "@/components/Contact";
 import EmblaCarousel from "@/components/slider/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
+import Link from "next/link";
 
 export default function ProjectsPage() {
   const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
@@ -143,6 +144,14 @@ export default function ProjectsPage() {
                 An advanced, responsive dashboard and data management platform
                 built with a modern tech stack.
               </h3>
+              <Link
+                href="https://dev.tarafdari.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg underline hover:no-underline text-blue-600"
+              >
+                https://dev.tarafdari.com
+              </Link>
             </div>
             <ul className="list-disc pl-8 marker:text-light text-light flex flex-col gap-2">
               <li className="pl-2 text-justify">
