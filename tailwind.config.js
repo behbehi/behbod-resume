@@ -12,7 +12,7 @@ module.exports = {
         light: "#5F5F5F",
       },
       fontFamily: {
-        sans: ["Vazirmatn", "Tahoma", "Arial", "sans-serif"],
+        sans: ["Roboto", "sans-serif"],
       },
     },
   },
