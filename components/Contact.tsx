@@ -22,25 +22,25 @@ export function Contact() {
   return (
     <div
       id="contact"
-      className="flex flex-col gap-10 px-8 md:px-0"
-      dir={language === "fa" ? "rtl" : "ltr"}
+      className="flex flex-col items-center gap-10 px-8 md:px-0"
     >
       <h2 className="text-3xl text-center">{t.title}</h2>
 
-      <div
-        className={`flex items-center justify-center gap-3 relative group ${
-          language === "fa" ? "flex-row-reverse" : ""
-        }`}
-      >
-        <Image src="/icons/logo.png" width={24} height={24} alt="email icon" />
-
-        <span>behbod7899@gmail.com</span>
-
+      <div className="flex flex-col gap-2 relative group">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/icons/email.png"
+            width={18}
+            height={18}
+            alt="email icon"
+          />
+          <span>behbod7899@gmail.com</span>
+        </div>
         <div
-          className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex 
-            bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg 
-            whitespace-nowrap transition-all duration-200
-            ${language === "fa" ? "flex-row-reverse" : "flex-row"}`}
+          className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex
+              bg-dark text-white text-sm px-4 py-2 rounded-lg shadow-lg
+              whitespace-nowrap transition-all duration-200
+              ${language === "fa" ? "flex-row-reverse" : "flex-row"}`}
           dir={language === "fa" ? "rtl" : "ltr"}
         >
           <div className="flex items-center gap-2 w-full justify-center">
@@ -66,6 +66,15 @@ export function Contact() {
               </>
             )}
           </div>
+        </div>
+        <div className="flex items-center gap-2 w-full">
+          <Image
+            src="/icons/telegram.png"
+            width={20}
+            height={20}
+            alt="telegram icon"
+          />
+          <span>Behbodkh</span>
         </div>
       </div>
     </div>
