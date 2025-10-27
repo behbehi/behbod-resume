@@ -17,13 +17,13 @@ export function Hero() {
     en: {
       greeting: "Hi! I'm Behbod",
       title: "Building Modern Web Experiences with Next.js & React",
-      desc: "Frontend developer specializing in Next.js, React, and modern web apps — focused on speed, scalability, and clean UI.",
+      desc: "Frontend developer with 3+ years of experience specializing in Next.js, React, and modern web apps — focused on speed, scalability, and clean UI.",
       hire: "Hire Me",
     },
     fa: {
       greeting: "سلام! من بهبد هستم",
       title: "ساخت وب اپلیکیشن‌های مدرن با Next.js و React",
-      desc: "توسعه‌دهنده فرانت‌اند با تخصص در Next.js و React — تمرکز بر سرعت، مقیاس‌پذیری و رابط کاربری ساده و حرفه‌ای.",
+      desc: "توسعه‌دهنده فرانت‌اند با بیش از ۳ سال تجربه در Next.js و React — تمرکز بر سرعت، مقیاس‌پذیری و رابط کاربری ساده و حرفه‌ای.",
       hire: "ارتباط با من",
     },
   };
