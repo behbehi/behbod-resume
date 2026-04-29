@@ -19,6 +19,9 @@ export default function RootLayout({
       <body className="py-6">
         <LanguageProvider>
           <Header />
+          <div className="orb orb-purple" />
+          <div className="orb orb-pink" />
+          <div className="orb orb-blue" />
           {children}
           <Footer />
         </LanguageProvider>
