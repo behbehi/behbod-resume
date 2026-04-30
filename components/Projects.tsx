@@ -36,7 +36,7 @@ export function Projects() {
         </div>
         <Link
           href="/projects"
-          className={`underline hover:no-underline text-sm ${
+          className={`text-pink-500 font-semibold underline hover:no-underline text-sm ${
             language === "fa" ? "pr-8 md:pr-0" : "pl-8 md:pl-0"
           }`}
         >
@@ -44,7 +44,7 @@ export function Projects() {
         </Link>
       </div>
       <Link href="/projects" className="block w-full md:w-auto">
-        <div className="w-full md:w-auto transform scale-105 md:scale-100 transition-transform duration-300">
+        <div className="w-full md:w-auto transition-transform duration-300 md:hover:scale-105">
           <div className="w-full max-w-[220px]">
             <Image
               src="/images/projects.svg"

@@ -1,3 +1,4 @@
+import { AboutMe } from "@/components/AboutMe";
 import { Contact } from "@/components/Contact";
 import { FunFact } from "@/components/FunFact";
 import { Hero } from "@/components/Hero";
@@ -9,6 +10,7 @@ export default function Home() {
     <div className="flex flex-col items-center gap-[150px] my-[150px] overflow-hidden">
       <Hero />
       <Skills />
+      <AboutMe />
       <FunFact />
       <Projects />
       <Contact />
