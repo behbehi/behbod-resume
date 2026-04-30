@@ -20,12 +20,14 @@ export function Header() {
     en: {
       home: "Home",
       projects: "Projects",
+      about: "About",
       contact: "Contact",
       tooltip: "Available for new projects — let's talk!",
     },
     fa: {
       home: "خانه",
       projects: "پروژه‌ها",
+      about: "درباره",
       contact: "تماس",
       tooltip: "در دسترس برای پروژه‌های تازه — بیایید صحبت کنیم!",
     },
@@ -58,14 +60,22 @@ export function Header() {
           >
             {t.projects}
           </Link>
-          {pathname === "/" && (
-            <span
-              onClick={handleScrollToContact}
-              className="hover:text-neutral-700 cursor-pointer"
-            >
-              {t.contact}
-            </span>
-          )}
+          <Link
+            href="/about"
+            className={`hover:text-neutral-700 ${
+              pathname.startsWith("/about") ? "font-semibold" : ""
+            }`}
+          >
+            {t.about}
+          </Link>
+          <Link
+            href="/contact"
+            className={`hover:text-neutral-700 ${
+              pathname.startsWith("/contact") ? "font-semibold" : ""
+            }`}
+          >
+            {t.contact}
+          </Link>
         </div>
 
         <button

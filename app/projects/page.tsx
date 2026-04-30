@@ -222,7 +222,6 @@ export default function ProjectsPage() {
         </div>
         <EmblaCarousel slides={UIUX_SLIDES} options={OPTIONS} />
       </div>
-      <Contact />
     </div>
   );
 }

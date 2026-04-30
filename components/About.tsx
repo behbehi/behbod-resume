@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "./context/LanguageContext";
 
-export function AboutMe() {
+export function About() {
   const { language } = useLanguage();
 
   const text = {
@@ -29,15 +29,15 @@ export function AboutMe() {
       className="md:flex-row flex flex-col-reverse items-center gap-7 md:gap-32"
       dir={language === "fa" ? "rtl" : "ltr"}
     >
-      <Link href="/projects" className="block w-full md:w-auto">
+      <Link href="/about" className="block w-full md:w-auto">
         <div className="w-full md:w-auto transition-transform duration-300 md:hover:scale-105">
           <div className="w-full max-w-[220px]">
             <Image
-              src="/images/about-me.svg"
+              src="/images/about.svg"
               width={880}
               height={608}
               className="w-full h-auto"
-              alt="about me image"
+              alt="about image"
             />
           </div>
         </div>
@@ -48,7 +48,7 @@ export function AboutMe() {
           <p className="text-light text-justify">{t.description}</p>
         </div>
         <Link
-          href="/projects"
+          href="/about"
           className={`text-pink-500 font-semibold underline hover:no-underline text-sm ${
             language === "fa" ? "pr-8 md:pr-0" : "pl-8 md:pl-0"
           }`}

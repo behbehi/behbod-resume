@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
+import Link from "next/link";
 
 const handleScrollToContact = () => {
   const contactSection = document.getElementById("contact");
@@ -57,12 +58,12 @@ export function Hero() {
         <h1 className="text-3xl text-center">{t.title}</h1>
         <p className="text-light text-center">{t.desc}</p>
       </div>
-      <button
-        onClick={handleScrollToContact}
-        className="bg-dark rounded-full py-3 text-white w-28 text-sm hover:bg-neutral-800"
+      <Link
+        href="/contact"
+        className="bg-purple-600 rounded-full py-3 text-white w-28 text-sm text-center hover:bg-purple-500"
       >
         {t.hire}
-      </button>
+      </Link>
     </div>
   );
 }

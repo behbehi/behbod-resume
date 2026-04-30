@@ -1,5 +1,6 @@
-import { AboutMe } from "@/components/AboutMe";
+import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { Cta } from "@/components/Cta";
 import { FunFact } from "@/components/FunFact";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
@@ -10,10 +11,10 @@ export default function Home() {
     <div className="flex flex-col items-center gap-[150px] my-[150px] overflow-hidden">
       <Hero />
       <Skills />
-      <AboutMe />
+      <About />
       <FunFact />
       <Projects />
-      <Contact />
+      <Cta />
     </div>
   );
 }
