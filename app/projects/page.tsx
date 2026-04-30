@@ -137,12 +137,12 @@ export default function ProjectsPage() {
               <h2 className="text-3xl">{t.tarafdariTitle}</h2>
               <h3 className="text-xl text-light">{t.tarafdariDesc}</h3>
               <Link
-                href="https://dev.tarafdari.com"
+                href="https://tarafdari.ctrltech.org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg underline hover:no-underline text-blue-600"
               >
-                https://dev.tarafdari.com
+                https://tarafdari.ctrltech.org
               </Link>
             </div>
             <ul

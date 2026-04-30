@@ -3,108 +3,103 @@
 import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
 
+const coreSkills = ["React", "Next.js", "TypeScript"];
+
+const skillGroups = [
+  {
+    title: { en: "Languages", fa: "زبان‌ها" },
+    skills: [
+      { name: "JavaScript", icon: "/icons/js.png" },
+      { name: "TypeScript", icon: "/icons/ts.png" },
+      { name: "HTML", icon: "/icons/html.png" },
+      { name: "CSS", icon: "/icons/css.png" },
+    ],
+  },
+  {
+    title: { en: "Frontend", fa: "فرانت‌اند" },
+    skills: [
+      { name: "React", icon: "/icons/react.png" },
+      { name: "Next.js", icon: "/icons/next.png" },
+      { name: "Vue.js", icon: "/icons/vue.png" },
+      { name: "Nuxt.js", icon: "/icons/nuxtjs.png" },
+    ],
+  },
+  {
+    title: { en: "State & Tools", fa: "مدیریت وضعیت و ابزارها" },
+    skills: [
+      { name: "Redux", icon: "/icons/redux.png" },
+      { name: "Jotai", icon: "/icons/jotai.png" },
+    ],
+  },
+  {
+    title: { en: "Styling", fa: "استایل‌دهی" },
+    skills: [{ name: "Tailwind CSS", icon: "/icons/tailwind.png" }],
+  },
+  {
+    title: { en: "Testing & Monitoring", fa: "تست و مانیتورینگ" },
+    skills: [
+      { name: "Jest", icon: "/icons/jest.png" },
+      { name: "Gatling", icon: "/icons/gatling.png" },
+      { name: "Sentry", icon: "/icons/sentry.png" },
+    ],
+  },
+  {
+    title: { en: "Other", fa: "سایر" },
+    skills: [{ name: "Git", icon: "/icons/git.png" }],
+  },
+];
+
 export function Skills() {
   const { language } = useLanguage();
+  const isFa = language === "fa";
+  const groups = isFa ? [...skillGroups].reverse() : skillGroups;
 
   return (
-    <div className="flex flex-col gap-10 items-center">
-      <h2 className="text-3xl text-center">
-        {language === "fa" ? "مهارت‌های من" : "My Skills"}
+    <section className="flex flex-col items-center gap-10">
+      <h2 className="text-center text-3xl">
+        {isFa ? "مهارت‌های من" : "My Skills"}
       </h2>
-      <div className="flex items-start gap-14 md:gap-32">
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/html.png"
-              width={18}
-              height={18}
-              alt="html icon"
-            />
-            <span className="text-sm">HTML</span>
+
+      <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
+        {groups.map((group) => (
+          <div key={group.title.en} className="flex flex-col items-start gap-6">
+            <h3
+              className={`w-full border-b border-black/20 pb-2 text-sm uppercase ${
+                isFa ? "text-right" : "text-left"
+              }`}
+            >
+              {isFa ? group.title.fa : group.title.en}
+            </h3>
+
+            <div className="flex flex-col gap-5">
+              {group.skills.map((skill) => {
+                const isCoreSkill = coreSkills.includes(skill.name);
+
+                return (
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-2 opacity-80 transition hover:opacity-100"
+                  >
+                    <Image
+                      src={skill.icon}
+                      width={18}
+                      height={18}
+                      alt={`${skill.name} icon`}
+                    />
+                    <span
+                      className={`text-sm ${
+                        isCoreSkill ? "font-medium" : "font-normal"
+                      }`}
+                    >
+                      {skill.name}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <Image src="/icons/css.png" width={18} height={18} alt="css icon" />
-            <span className="text-sm">CSS</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image src="/icons/js.png" width={18} height={18} alt="js icon" />
-            <span className="text-sm">Javascript</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image src="/icons/ts.png" width={18} height={18} alt="ts icon" />
-            <span className="text-sm">Typescript</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/tailwind.png"
-              width={18}
-              height={18}
-              alt="tailwind icon"
-            />
-            <span className="text-sm">Tailwind CSS</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image src="/icons/git.png" width={18} height={18} alt="git icon" />
-            <span className="text-sm">Git</span>
-          </div>
-        </div>
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/react.png"
-              width={18}
-              height={18}
-              alt="react icon"
-            />
-            <span className="text-sm">React</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/next.png"
-              width={18}
-              height={18}
-              alt="next icon"
-            />
-            <span className="text-sm">Nextjs</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/redux.png"
-              width={18}
-              height={18}
-              alt="redux icon"
-            />
-            <span className="text-sm">Redux</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/jotai.png"
-              width={18}
-              height={18}
-              alt="jotai icon"
-            />
-            <span className="text-sm">Jotai</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/jest.png"
-              width={18}
-              height={18}
-              alt="jest icon"
-            />
-            <span className="text-sm">Jest</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Image
-              src="/icons/gatling.png"
-              width={18}
-              height={18}
-              alt="gatling icon"
-            />
-            <span className="text-sm">Gatling</span>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }

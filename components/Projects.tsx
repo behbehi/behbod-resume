@@ -45,13 +45,15 @@ export function Projects() {
       </div>
       <Link href="/projects" className="block w-full md:w-auto">
         <div className="w-full md:w-auto transform scale-105 md:scale-100 transition-transform duration-300">
-          <Image
-            src="/images/laptop.png"
-            width={380}
-            height={280}
-            className="w-full h-auto"
-            alt="laptop image"
-          />
+          <div className="w-full max-w-[220px]">
+            <Image
+              src="/images/projects.svg"
+              width={880}
+              height={608}
+              className="w-full h-auto"
+              alt="laptop image"
+            />
+          </div>
         </div>
       </Link>
     </div>
