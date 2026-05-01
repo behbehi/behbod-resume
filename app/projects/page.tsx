@@ -125,11 +125,11 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="my-[100px] md:my-[150px] flex flex-col gap-[100px] md:gap-[150px]">
+    <div className="flex flex-col gap-[100px] md:gap-[150px]">
       {/* Tarafdari Project */}
       <div className="flex flex-col gap-20">
         <div
-          className="flex flex-col gap-3 px-10 md:px-20"
+          className="flex flex-col gap-3"
           dir={language === "fa" ? "rtl" : "ltr"}
         >
           <div className="flex flex-col gap-10">

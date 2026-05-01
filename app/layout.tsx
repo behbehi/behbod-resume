@@ -22,7 +22,9 @@ export default function RootLayout({
           <div className="orb orb-purple" />
           <div className="orb orb-pink" />
           <div className="orb orb-blue" />
-          {children}
+          <div className="max-w-[1000px] mx-auto px-10 my-[150px] overflow-hidden">
+            {children}
+          </div>
           <Footer />
         </LanguageProvider>
       </body>

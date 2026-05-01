@@ -47,30 +47,28 @@ export function Skills() {
   const groups = isFa ? [...skillGroups].reverse() : skillGroups;
 
   return (
-    <section className="flex flex-col items-center gap-10">
+    <section className="flex flex-col gap-10 w-full">
       <h2 className="text-center text-3xl">
         {isFa ? "مهارت‌های من" : "My Skills"}
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-6">
+      <div className="grid w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-6">
         {groups.map((group, index) => (
           <div key={index} className="flex flex-col gap-4">
-            {group.skills.map((skill) => {
-              return (
-                <div
-                  key={skill.name}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg border border-black/10 hover:border-black/20 hover:bg-black/5 transition"
-                >
-                  <Image
-                    src={skill.icon}
-                    width={18}
-                    height={18}
-                    alt={`${skill.name} icon`}
-                  />
-                  <span className="text-sm">{skill.name}</span>
-                </div>
-              );
-            })}
+            {group.skills.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg border border-black/10 hover:border-black/20 hover:bg-black/5 transition"
+              >
+                <Image
+                  src={skill.icon}
+                  width={18}
+                  height={18}
+                  alt={`${skill.name} icon`}
+                />
+                <span className="text-sm">{skill.name}</span>
+              </div>
+            ))}
           </div>
         ))}
       </div>

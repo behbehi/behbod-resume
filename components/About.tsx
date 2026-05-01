@@ -23,35 +23,41 @@ export function About() {
   };
 
   const t = text[language];
+  const isFa = language === "fa";
 
   return (
     <div
-      className="md:flex-row flex flex-col-reverse items-center gap-7 md:gap-32"
-      dir={language === "fa" ? "rtl" : "ltr"}
+      className="flex flex-col-reverse md:flex-row items-start md:items-center gap-10 md:gap-24 w-full"
+      dir={isFa ? "rtl" : "ltr"}
     >
-      <Link href="/about" className="block w-full md:w-auto">
-        <div className="w-full md:w-auto transition-transform duration-300 md:hover:scale-105">
-          <div className="w-full max-w-[220px]">
-            <Image
-              src="/images/about.svg"
-              width={880}
-              height={608}
-              className="w-full h-auto"
-              alt="about image"
-            />
-          </div>
+      <Link
+        href="/about"
+        className="hidden flex-1 md:flex justify-center md:justify-start"
+      >
+        <div className="w-full max-w-[260px] transition-transform duration-300 md:hover:scale-105">
+          <Image
+            src="/images/about.svg"
+            width={880}
+            height={608}
+            className="w-full h-auto"
+            alt="about image"
+            priority
+          />
         </div>
       </Link>
-      <div className="flex flex-col gap-7">
-        <div className="flex flex-col gap-5 md:w-[400px] px-8 md:px-0">
+
+      <div className="flex flex-col gap-7 flex-1">
+        <div className="flex flex-col gap-5">
           <h2 className="text-3xl">{t.title}</h2>
-          <p className="text-light text-justify">{t.description}</p>
+
+          <p className="text-light text-justify whitespace-pre-line">
+            {t.description}
+          </p>
         </div>
+
         <Link
           href="/about"
-          className={`text-pink-500 font-semibold underline hover:no-underline text-sm ${
-            language === "fa" ? "pr-8 md:pr-0" : "pl-8 md:pl-0"
-          }`}
+          className="text-pink-500 font-semibold underline hover:no-underline text-sm"
         >
           {t.link}
         </Link>
