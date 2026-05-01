@@ -3,49 +3,41 @@
 import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
 
-const coreSkills = ["React", "Next.js", "TypeScript"];
-
 const skillGroups = [
   {
-    title: { en: "Languages", fa: "زبان‌ها" },
     skills: [
-      { name: "JavaScript", icon: "/icons/js.png" },
-      { name: "TypeScript", icon: "/icons/ts.png" },
-      { name: "HTML", icon: "/icons/html.png" },
-      { name: "CSS", icon: "/icons/css.png" },
+      { name: "JavaScript", icon: "/icons/js.svg" },
+      { name: "TypeScript", icon: "/icons/ts.svg" },
+      { name: "HTML", icon: "/icons/html.svg" },
+      { name: "CSS", icon: "/icons/css.svg" },
     ],
   },
   {
-    title: { en: "Frontend", fa: "فرانت‌اند" },
     skills: [
-      { name: "React", icon: "/icons/react.png" },
-      { name: "Next.js", icon: "/icons/next.png" },
-      { name: "Vue.js", icon: "/icons/vue.png" },
-      { name: "Nuxt.js", icon: "/icons/nuxtjs.png" },
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "Next.js", icon: "/icons/nextjs.svg" },
+      { name: "Vue.js", icon: "/icons/vue.svg" },
+      { name: "Nuxt.js", icon: "/icons/nuxtjs.svg" },
     ],
   },
   {
-    title: { en: "State & Tools", fa: "مدیریت وضعیت و ابزارها" },
     skills: [
-      { name: "Redux", icon: "/icons/redux.png" },
-      { name: "Jotai", icon: "/icons/jotai.png" },
+      { name: "Redux", icon: "/icons/redux.svg" },
+      { name: "Jotai", icon: "/icons/jotai.svg" },
     ],
   },
   {
-    title: { en: "Styling", fa: "استایل‌دهی" },
-    skills: [{ name: "Tailwind CSS", icon: "/icons/tailwind.png" }],
+    skills: [{ name: "Tailwind CSS", icon: "/icons/tailwind.svg" }],
   },
   {
-    title: { en: "Testing & Monitoring", fa: "تست و مانیتورینگ" },
     skills: [
-      { name: "Jest", icon: "/icons/jest.png" },
-      { name: "Gatling", icon: "/icons/gatling.png" },
-      { name: "Sentry", icon: "/icons/sentry.png" },
+      { name: "Jest", icon: "/icons/jest.svg" },
+      { name: "Gatling", icon: "/icons/gatling.svg" },
+      { name: "Sentry", icon: "/icons/sentry.svg" },
     ],
   },
   {
-    title: { en: "Other", fa: "سایر" },
-    skills: [{ name: "Git", icon: "/icons/git.png" }],
+    skills: [{ name: "Git", icon: "/icons/git.svg" }],
   },
 ];
 
@@ -60,43 +52,25 @@ export function Skills() {
         {isFa ? "مهارت‌های من" : "My Skills"}
       </h2>
 
-      <div className="grid w-full grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-14">
-        {groups.map((group) => (
-          <div key={group.title.en} className="flex flex-col items-start gap-6">
-            <h3
-              className={`w-full border-b border-black/20 pb-2 text-sm uppercase ${
-                isFa ? "text-right" : "text-left"
-              }`}
-            >
-              {isFa ? group.title.fa : group.title.en}
-            </h3>
-
-            <div className="flex flex-col gap-5">
-              {group.skills.map((skill) => {
-                const isCoreSkill = coreSkills.includes(skill.name);
-
-                return (
-                  <div
-                    key={skill.name}
-                    className="flex items-center gap-2 opacity-80 transition hover:opacity-100"
-                  >
-                    <Image
-                      src={skill.icon}
-                      width={18}
-                      height={18}
-                      alt={`${skill.name} icon`}
-                    />
-                    <span
-                      className={`text-sm ${
-                        isCoreSkill ? "font-medium" : "font-normal"
-                      }`}
-                    >
-                      {skill.name}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-6">
+        {groups.map((group, index) => (
+          <div key={index} className="flex flex-col gap-4">
+            {group.skills.map((skill) => {
+              return (
+                <div
+                  key={skill.name}
+                  className="flex items-center gap-2 px-3 py-2 rounded-lg border border-black/10 hover:border-black/20 hover:bg-black/5 transition"
+                >
+                  <Image
+                    src={skill.icon}
+                    width={18}
+                    height={18}
+                    alt={`${skill.name} icon`}
+                  />
+                  <span className="text-sm">{skill.name}</span>
+                </div>
+              );
+            })}
           </div>
         ))}
       </div>

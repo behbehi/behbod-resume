@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "./context/LanguageContext";
 
 export function FunFact() {
@@ -9,11 +8,11 @@ export function FunFact() {
   const text = {
     en: {
       title: "Fun Fact",
-      fact: "I debug faster after my second cup of coffee",
+      fact: "I debug faster after my second cup of coffee ☕",
     },
     fa: {
       title: "یک نکته جالب",
-      fact: "بعد از قهوه دوم، زودتر debug می‌کنم",
+      fact: "بعد از قهوه دوم، زودتر debug می‌کنم ☕",
     },
   };
 
@@ -25,15 +24,7 @@ export function FunFact() {
       dir={language === "fa" ? "rtl" : "ltr"}
     >
       <h2 className="text-3xl text-center">{t.title}</h2>
-      <div className="flex items-center gap-2 justify-center">
-        <span className="whitespace-nowrap">{t.fact}</span>
-        <Image
-          src="/emojies/coffee.png"
-          width={21}
-          height={21}
-          alt="coffee emoji"
-        />
-      </div>
+      <span className="whitespace-nowrap">{t.fact}</span>
     </div>
   );
 }

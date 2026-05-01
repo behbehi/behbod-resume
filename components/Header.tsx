@@ -77,7 +77,6 @@ export function Header() {
             {t.contact}
           </Link>
         </div>
-
         <button
           onClick={toggleLanguage}
           className="border border-neutral-300 rounded-full px-3 py-1 text-sm hover:bg-neutral-100 transition"
