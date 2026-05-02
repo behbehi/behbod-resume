@@ -44,7 +44,7 @@ export function Header() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center gap-5 text-sm">
+        <div className="flex items-center justify-center gap-5">
           <Link
             href="/"
             className={`hover:text-neutral-700 transition ${

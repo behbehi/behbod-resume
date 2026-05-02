@@ -39,7 +39,7 @@ export default function ContactPage() {
   const t = text[language];
 
   return (
-    <div className="flex flex-col items-center gap-10 w-full md:w-[300px]">
+    <div className="flex flex-col items-center gap-10 w-[300px]">
       <h2 className="text-3xl text-center">{t.title}</h2>
       <div className="flex flex-col gap-4 w-full">
         {contactItems.map((item) => (
