@@ -9,7 +9,7 @@ const FOOTER_ITEMS = [
     href: "https://gitlab.com/behbehi",
     src: "/icons/gitlab.svg",
     alt: "gitlab logo",
-    size: "w-[28px]",
+    size: "w-[25px]",
     type: "icon",
   },
   {
@@ -17,7 +17,7 @@ const FOOTER_ITEMS = [
     href: "/",
     src: "/images/logo.svg",
     alt: "logo image",
-    size: "w-[90px]",
+    size: "w-[85px]",
     type: "main",
   },
   {
@@ -33,7 +33,7 @@ const FOOTER_ITEMS = [
 export function Footer() {
   return (
     <footer>
-      <div className="flex items-center justify-center gap-12">
+      <div className="flex items-center justify-center gap-12 pb-2">
         {FOOTER_ITEMS.map((item) => {
           const isMain = item.type === "main";
           const isHighlight = item.type === "highlight";

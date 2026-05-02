@@ -17,15 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="py-6">
+      <body className="min-h-screen flex flex-col py-6">
         <LanguageProvider>
           <Header />
           <div className="orb orb-purple" />
           <div className="orb orb-pink" />
           <div className="orb orb-blue" />
-          <div className="max-w-[1000px] mx-auto px-10 my-[150px] overflow-hidden">
+
+          <main className="flex-1 max-w-[1000px] mx-auto px-10 my-[150px] overflow-hidden">
             {children}
-          </div>
+          </main>
           <Footer />
         </LanguageProvider>
       </body>
