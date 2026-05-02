@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col py-6">
@@ -23,7 +23,6 @@ export default function RootLayout({
           <div className="orb orb-purple" />
           <div className="orb orb-pink" />
           <div className="orb orb-blue" />
-
           <main className="flex-1 max-w-[1000px] mx-auto px-10 my-[150px] overflow-hidden">
             {children}
           </main>

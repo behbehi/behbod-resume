@@ -10,12 +10,14 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.2.10",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
