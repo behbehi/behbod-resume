@@ -5,8 +5,9 @@ import { Footer } from "@/components/Footer";
 import { LanguageProvider } from "@/components/context/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Behbod Khansari",
-  description: "this is my resume",
+  title: "Behbod Khansari — Front-End Engineer",
+  description:
+    "Front-end developer specializing in building high-performance, scalable web applications with modern technologies like Next.js, React, and TypeScript.",
 };
 
 export default function RootLayout({
