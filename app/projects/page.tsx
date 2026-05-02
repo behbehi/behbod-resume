@@ -41,6 +41,18 @@ export default function ProjectsPage() {
         "Enhanced SEO through Next.js 14 App Router’s Server-Side Rendering (SSR) and dynamic metadata management, improving search visibility and initial load performance.",
         "Optimized rendering with React’s concurrent features and component-level memoization, significantly boosting perceived responsiveness on both desktop and mobile devices.",
       ],
+      adminTitle: "Prediction Admin Dashboard",
+      adminDesc:
+        "A powerful admin panel for managing matches, tournaments, and prediction data with a focus on efficiency, scalability, and advanced UI interactions.",
+      adminPoints: [
+        "Built with Next.js 16 and React 19, leveraging modern rendering patterns and optimized performance for complex dashboard interactions.",
+        "Implemented advanced data tables using TanStack Table, enabling sorting, filtering, pagination, and efficient handling of large datasets.",
+        "Designed dynamic and type-safe forms with React Hook Form and Zod, ensuring robust validation and smooth user workflows for content management.",
+        "Integrated TanStack Query for server-state management, providing reliable caching, background updates, and reduced network overhead.",
+        "Developed drag-and-drop interfaces using DnD Kit for intuitive ordering and management of entities such as matches and tournaments.",
+        "Constructed a scalable and consistent UI using Radix UI primitives combined with Tailwind CSS, ensuring accessibility and a clean design system.",
+        "Enhanced user experience with real-time feedback using toast systems and smooth transitions, improving usability for admin operations.",
+      ],
     },
     fa: {
       tarafdariTitle: "وب اپلیکیشن طرفداری",
@@ -71,6 +83,18 @@ export default function ProjectsPage() {
         "بهره‌گیری از TanStack Query (React Query) برای data fetching بهینه با کشینگ هوشمند.",
         "بهبود SEO با استفاده از Server-Side Rendering (SSR) در App Router و مدیریت داینامیک متادیتا برای افزایش دیده‌شدن در موتورهای جست‌وجو.",
         "بهینه‌سازی عملکرد با memoization در سطح کامپوننت و استفاده از قابلیت‌های concurrent در React برای رندر سریع‌تر.",
+      ],
+      adminTitle: "پنل مدیریت پیش‌بینی",
+      adminDesc:
+        "یک داشبورد مدیریتی قدرتمند برای مدیریت مسابقات، تورنمنت‌ها و داده‌های پیش‌بینی با تمرکز بر کارایی و تجربه کاربری پیشرفته.",
+      adminPoints: [
+        "توسعه با Next.js 16 و React 19 با استفاده از الگوهای مدرن برای عملکرد بهتر در داشبوردهای پیچیده.",
+        "پیاده‌سازی جدول‌های پیشرفته با TanStack Table شامل فیلتر، مرتب‌سازی و pagination برای مدیریت داده‌های حجیم.",
+        "ساخت فرم‌های داینامیک و تایپ‌سیف با React Hook Form و Zod برای اعتبارسنجی دقیق و تجربه کاربری بهتر.",
+        "مدیریت داده‌های سرور با TanStack Query همراه با کشینگ هوشمند و به‌روزرسانی پس‌زمینه.",
+        "پیاده‌سازی Drag & Drop با استفاده از DnD Kit برای مدیریت آسان آیتم‌ها مانند مسابقات و تورنمنت‌ها.",
+        "طراحی رابط کاربری مدرن با Radix UI و Tailwind CSS با تمرکز بر دسترسی‌پذیری و یکپارچگی.",
+        "بهبود تجربه کاربری با نوتیفیکیشن‌های لحظه‌ای و تعاملات نرم برای عملیات مدیریتی.",
       ],
     },
   };
@@ -122,6 +146,16 @@ export default function ProjectsPage() {
     { id: 4, src: "/projects/pishbini/login.png", alt: "login" },
     { id: 5, src: "/projects/pishbini/login-2.png", alt: "login-2" },
     { id: 6, src: "/projects/pishbini/login-3.png", alt: "login-3" },
+  ];
+
+  const PISHBINI_ADMIN_SLIDES = [
+    { id: 1, src: "/projects/pishbini-admin/home.png", alt: "home" },
+    { id: 2, src: "/projects/pishbini-admin/matches.png", alt: "matches" },
+    {
+      id: 3,
+      src: "/projects/pishbini-admin/tournaments.png",
+      alt: "tournaments",
+    },
   ];
 
   return (
@@ -194,6 +228,33 @@ export default function ProjectsPage() {
           </div>
         </div>
         <EmblaCarousel slides={PISHBINI_SLIDES} options={OPTIONS} />
+      </div>
+
+      {/* Prediction Admin Project */}
+      <div className="flex flex-col gap-20">
+        <div
+          className="flex flex-col gap-3 px-10 md:px-20"
+          dir={language === "fa" ? "rtl" : "ltr"}
+        >
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-3xl">{t.adminTitle}</h2>
+              <h3 className="text-xl text-light">{t.adminDesc}</h3>
+            </div>
+            <ul
+              className={`list-disc marker:text-light text-light flex flex-col gap-2 ${
+                language === "fa" ? "pr-8" : "pl-8"
+              }`}
+            >
+              {t.adminPoints.map((point, i) => (
+                <li key={i} className="pl-2 text-justify">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <EmblaCarousel slides={PISHBINI_ADMIN_SLIDES} options={OPTIONS} />
       </div>
 
       {/* UI/UX Project */}

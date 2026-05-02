@@ -20,11 +20,11 @@ export function FunFact() {
 
   return (
     <div
-      className="flex flex-col gap-10 px-6 md:px-0"
+      className="flex flex-col gap-10"
       dir={language === "fa" ? "rtl" : "ltr"}
     >
       <h2 className="text-3xl text-center">{t.title}</h2>
-      <span className="whitespace-nowrap">{t.fact}</span>
+      <span className="">{t.fact}</span>
     </div>
   );
 }
