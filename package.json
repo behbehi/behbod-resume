@@ -7,8 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write",
-    "deploy": "gh-pages -d out"
+    "format": "biome format --write"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.2.10",
