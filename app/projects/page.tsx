@@ -1,6 +1,5 @@
 "use client";
 
-import { Contact } from "@/components/Contact";
 import EmblaCarousel from "@/components/slider/EmblaCarousel";
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";
@@ -53,6 +52,16 @@ export default function ProjectsPage() {
         "Constructed a scalable and consistent UI using Radix UI primitives combined with Tailwind CSS, ensuring accessibility and a clean design system.",
         "Enhanced user experience with real-time feedback using toast systems and smooth transitions, improving usability for admin operations.",
       ],
+      bffTitle: "Backend-for-Frontend (BFF) Architecture",
+      bffDesc:
+        "A dedicated layer between the front-end and backend services, designed to handle authentication, security, and optimized data flow tailored for the UI.",
+      bffPoints: [
+        "Designed and integrated a Backend-for-Frontend (BFF) layer to decouple client-side logic from core backend services, improving maintainability and scalability.",
+        "Handled authentication securely using HTTP-only cookies and token management within the BFF, preventing exposure of sensitive tokens to the client.",
+        "Centralized API communication through the BFF, enabling consistent request handling, error normalization, and response shaping tailored to UI needs.",
+        "Improved security by mitigating common vulnerabilities such as XSS and token leakage by avoiding direct client-side token storage.",
+        "Streamlined data fetching by aggregating multiple backend endpoints into single optimized responses, reducing client complexity and network overhead.",
+      ],
     },
     fa: {
       tarafdariTitle: "وب اپلیکیشن طرفداری",
@@ -95,6 +104,16 @@ export default function ProjectsPage() {
         "پیاده‌سازی Drag & Drop با استفاده از DnD Kit برای مدیریت آسان آیتم‌ها مانند مسابقات و تورنمنت‌ها.",
         "طراحی رابط کاربری مدرن با Radix UI و Tailwind CSS با تمرکز بر دسترسی‌پذیری و یکپارچگی.",
         "بهبود تجربه کاربری با نوتیفیکیشن‌های لحظه‌ای و تعاملات نرم برای عملیات مدیریتی.",
+      ],
+      bffTitle: "معماری Backend-for-Frontend (BFF)",
+      bffDesc:
+        "یک لایه واسط بین فرانت‌اند و بک‌اند که برای مدیریت احراز هویت، امنیت و بهینه‌سازی جریان داده‌ها متناسب با نیاز رابط کاربری طراحی شده است.",
+      bffPoints: [
+        "طراحی و پیاده‌سازی لایه BFF برای جداسازی منطق فرانت‌اند از سرویس‌های بک‌اند و افزایش مقیاس‌پذیری و نگهداری‌پذیری.",
+        "مدیریت امن احراز هویت با استفاده از کوکی‌های HTTP-only و کنترل توکن‌ها در سمت BFF بدون افشای آن‌ها به کلاینت.",
+        "متمرکزسازی ارتباطات API از طریق BFF برای مدیریت یکنواخت درخواست‌ها، خطاها و ساختار پاسخ‌ها متناسب با نیاز UI.",
+        "افزایش امنیت با جلوگیری از ذخیره توکن در کلاینت و کاهش ریسک‌هایی مانند XSS و نشت اطلاعات.",
+        "بهینه‌سازی دریافت داده با تجمیع چند endpoint در یک پاسخ واحد برای کاهش پیچیدگی فرانت‌اند و تعداد درخواست‌ها.",
       ],
     },
   };
@@ -198,7 +217,7 @@ export default function ProjectsPage() {
       {/* Prediction Project */}
       <div className="flex flex-col gap-20">
         <div
-          className="flex flex-col gap-3 px-10 md:px-20"
+          className="flex flex-col gap-3"
           dir={language === "fa" ? "rtl" : "ltr"}
         >
           <div className="flex flex-col gap-10">
@@ -233,7 +252,7 @@ export default function ProjectsPage() {
       {/* Prediction Admin Project */}
       <div className="flex flex-col gap-20">
         <div
-          className="flex flex-col gap-3 px-10 md:px-20"
+          className="flex flex-col gap-3"
           dir={language === "fa" ? "rtl" : "ltr"}
         >
           <div className="flex flex-col gap-10">
@@ -257,10 +276,37 @@ export default function ProjectsPage() {
         <EmblaCarousel slides={PISHBINI_ADMIN_SLIDES} options={OPTIONS} />
       </div>
 
+      {/* BFF Architecture Section */}
+      <div className="flex flex-col gap-20">
+        <div
+          className="flex flex-col gap-3"
+          dir={language === "fa" ? "rtl" : "ltr"}
+        >
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-3xl">{t.bffTitle}</h2>
+              <h3 className="text-xl text-light">{t.bffDesc}</h3>
+            </div>
+
+            <ul
+              className={`list-disc marker:text-light text-light flex flex-col gap-2 ${
+                language === "fa" ? "pr-8" : "pl-8"
+              }`}
+            >
+              {t.bffPoints.map((point, i) => (
+                <li key={i} className="pl-2 text-justify">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* UI/UX Project */}
       <div className="flex flex-col gap-20">
         <div
-          className="flex flex-col gap-3 px-10 md:px-20"
+          className="flex flex-col gap-3"
           dir={language === "fa" ? "rtl" : "ltr"}
         >
           <div className="flex flex-col gap-10">

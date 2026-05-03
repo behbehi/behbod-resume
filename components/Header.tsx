@@ -44,7 +44,10 @@ export function Header() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center gap-5">
+        <div
+          className="flex items-center justify-center gap-5"
+          dir={language === "fa" ? "rtl" : "ltr"}
+        >
           <Link
             href="/"
             className={`hover:text-neutral-700 transition ${
@@ -81,7 +84,10 @@ export function Header() {
       </div>
 
       <div className="relative hidden md:flex items-center justify-center">
-        <div className="flex items-center gap-10">
+        <div
+          className="flex items-center gap-10"
+          dir={language === "fa" ? "rtl" : "ltr"}
+        >
           <Link
             href="/"
             className={`hover:text-neutral-700 transition ${
